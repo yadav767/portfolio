@@ -12,7 +12,7 @@ const AdminIntro = () => {
     const submitHandler = async (values) => {
         try {
             dispatch(setLoading())
-            const response = await axios.put("http://localhost:8080/api/portfolio/update-intro", { ...values, _id: portfolioData.intros._id, })
+            const response = await axios.put("https://portfolio-1-bg32.onrender.com/api/portfolio/update-intro", { ...values, _id: portfolioData.intros._id, })
             dispatch(hideLoading())
             if (response.data.success) {
                 message.success(response.data.message)
