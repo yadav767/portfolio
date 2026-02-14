@@ -11,7 +11,6 @@ const Login = () => {
     const dispatch=useDispatch()
     const onFinish = async (values) => {
         const { username, password } = values
-        console.log(username, password);
         try {
             dispatch(setLoading())
             const response = await axios.post("http://localhost:8080/api/portfolio/admin-login", { username, password })
