@@ -23,7 +23,7 @@ const Contact = () => {
             <div className="flex items-center justify-between px-30 max-sm:px-0 max-sm:flex-col">
                 <div className="flex flex-col max-sm:px-7 gap-1">
                     <h1 className='text-tertiary'>{"{"}</h1>
-                    {Object.keys(contact).map((key,idx) => (
+                    {Object.keys(contact).filter(key => key !== "_id").map((key,idx) => (
                         <h1 key={idx} className='text-tertiary  ml-6'>
                             <span>{key} : </span>
                             <span>{contact[key]} ,</span>
