@@ -12,7 +12,6 @@ const Login = () => {
     const onFinish = async (values) => {
         const { username, password } = values
         try {
-            // dispatch(setLoading())
             const response = await axios.post("https://portfolio-1-bg32.onrender.com/api/portfolio/admin-login", { username, password })
             dispatch(hideLoading())
             if(response.data.success){
@@ -20,7 +19,7 @@ const Login = () => {
                 localStorage.setItem("token",JSON.stringify(response.data))
                 navigate("/admin")
             }else{
-                alert("Invalid details")
+                message.error(response.data.message)
             }
             
         } catch (error) {
