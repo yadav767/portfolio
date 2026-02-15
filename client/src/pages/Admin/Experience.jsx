@@ -17,9 +17,9 @@ const Experience = () => {
             dispatch(setLoading())
             let response
             if (selectedItemForEdit) {
-                response = await axios.put("http://localhost:8080/api/portfolio/update-experience", { ...values, _id: selectedItemForEdit._id })
+                response = await axios.put("https://portfolio-1-bg32.onrender.com/api/portfolio/update-experience", { ...values, _id: selectedItemForEdit._id })
             } else {
-                response = await axios.post("http://localhost:8080/api/portfolio/add-experience", values)
+                response = await axios.post("https://portfolio-1-bg32.onrender.com/api/portfolio/add-experience", values)
             }
             dispatch(hideLoading())
             if (response.data.success) {
@@ -41,7 +41,7 @@ const Experience = () => {
     const onDelete = async (item) => {
         try {
             dispatch(setLoading())
-            const response = await axios.post("http://localhost:8080/api/portfolio/delete-experience", { _id: item._id })
+            const response = await axios.post("https://portfolio-1-bg32.onrender.com/api/portfolio/delete-experience", { _id: item._id })
             dispatch(hideLoading())
             if (response.data.success) {
                 message.success(response.data.message)

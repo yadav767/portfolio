@@ -13,7 +13,7 @@ const Login = () => {
         const { username, password } = values
         try {
             dispatch(setLoading())
-            const response = await axios.post("http://localhost:8080/api/portfolio/admin-login", { username, password })
+            const response = await axios.post("https://portfolio-1-bg32.onrender.com/api/portfolio/admin-login", { username, password })
             dispatch(hideLoading())
             if(response.data.success){
                 message.success(response.data.message)
