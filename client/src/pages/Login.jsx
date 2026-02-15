@@ -13,18 +13,19 @@ const Login = () => {
         const { username, password } = values
         try {
             dispatch(setLoading())
-            const response = await axios.post("https://portfolio-1-bg32.onrender.com/api/portfolio/admin-login", { username, password })
+            const response = await axios.post("http://localhost:8080/api/portfolio/admin-login", { username, password })
             dispatch(hideLoading())
             if(response.data.success){
                 message.success(response.data.message)
                 localStorage.setItem("token",JSON.stringify(response.data))
                 navigate("/admin")
             }else{
-                message.error(response.data.message)
+                alert("Invalid details")
             }
             
         } catch (error) {
-            message.error()
+            message.error("Invalid username or password")
+            dispatch(hideLoading())
         }
 
     }
@@ -35,7 +36,7 @@ const Login = () => {
                 <Typography.Title level={3} style={{ textAlign: 'center', marginBottom: 24 }}>
                     Admin Login
                 </Typography.Title>
-                <Form name="login" layout="vertical" onFinish={onFinish}>
+                <Form name="username" layout="vertical" onFinish={onFinish}>
                     <Form.Item name="username" rules={[{ required: true, message: 'Please enter username' }]}>
                         <Input prefix={<UserOutlined />} placeholder="Username" />
                     </Form.Item>

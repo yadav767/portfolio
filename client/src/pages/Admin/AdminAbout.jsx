@@ -14,7 +14,7 @@ const AdminAbout = () => {
     values.skills = tempSkills
     try {
       dispatch(setLoading())
-      const response = await axios.put("https://portfolio-1-bg32.onrender.com/api/portfolio/update-about", { ...values, _id: portfolioData.abouts._id, })
+      const response = await axios.put("http://localhost:8080/api/portfolio/update-about", { ...values, _id: portfolioData.abouts._id, })
       dispatch(hideLoading())
       if (response.data.success) {
         message.success(response.data.message)

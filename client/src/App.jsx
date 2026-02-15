@@ -17,7 +17,7 @@ const App = () => {
   const getPortfolioData = async () => {
     try {
       dispatch(setLoading())
-      const response = await axios.get("https://portfolio-1-bg32.onrender.com/api/portfolio/get-portfolio-data")
+      const response = await axios.get("http://localhost:8080/api/portfolio/get-portfolio-data")
       dispatch(setPortfolioData(response.data))
       dispatch(setReloadData())
       dispatch(hideLoading())

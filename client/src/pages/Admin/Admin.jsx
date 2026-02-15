@@ -47,7 +47,7 @@ const Admin = () => {
         if (!localStorage.getItem("token")) {
             navigate("/admin-login")
         }
-    })
+    },[])
     return (
         <div>
             <Header />

@@ -188,23 +188,23 @@ async function updateContactController(req, res) {
 //Admin login controller
 async function loginAdminController(req, res) {
     const { username, password } = req.body
+    console.log(req.body);
     try {
         const user = await userModel.findOne({ username, password })
-        user.password = undefined
-        if(user){
-            res.status(200).send({
-                data:user,
-                success:true,
-                message:"Login successfully!"
-            })
-        }else{
-            res.status(200).send({
-                success:false,
-                message:"Invalid username or password"
+        if (!user) {
+            return res.status(500).send({
+                success: false,
+                message: "Invalid username or password"
             })
         }
+        user.password = undefined
+        res.status(200).send({
+            data: user,
+            success: true,
+            message: "Login successfully!"
+        })
     } catch (error) {
-        res.status(500).send(error)
+        res.status(500).send("Invalid username or password")
     }
 }
 
