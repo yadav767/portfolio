@@ -8,15 +8,6 @@ const Contact = () => {
     const {contacts}=portfolioData
     const contact=contacts[0]
 
-    // const user = {
-       
-    //     name: "Ayush Yadav",
-    //     age: "22",
-    //     gender: "Male",
-    //     email: "yyadavaayush767@gmail.com",
-    //     mobile: "9305483582",
-    //     country: "India"
-    // }
     return (
         <div className='mt-3'>
             <SectionTitle title="Say Hello!" />

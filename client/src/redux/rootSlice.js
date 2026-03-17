@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const   rootSlice = createSlice({
     name: "root",
     initialState: {
-        loading: false,
+        loading: false      ,
         portfolioData: null,
         reloadData:false
     },
