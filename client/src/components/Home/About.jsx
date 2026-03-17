@@ -10,7 +10,6 @@ function About() {
     const { description1, description2, lottieURL, skills}=abouts
 
 
-    // const skills = ["HTML", "Tailwind CSS", "CSS", "JavaScript", "jQuery", "React", "Postman", "Node.js", "Express.js", "MongoDB", "Git", "GitHub"]
     return (
         <div className='mb-[4rem] max-sm:m-4'>
             <SectionTitle title="About" />
