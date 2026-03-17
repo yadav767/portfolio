@@ -12,7 +12,7 @@ const Login = () => {
     const onFinish = async (values) => {
         const { username, password } = values
         try {
-            const response = await axios.post("http://localhost:8080/api/portfolio/admin-login", { username, password })
+            const response = await axios.post("https://portfolio-green-ten-61.vercel.app/api/portfolio/admin-login", { username, password })
             dispatch(hideLoading())
             if(response.data.success){
                 message.success(response.data.message)

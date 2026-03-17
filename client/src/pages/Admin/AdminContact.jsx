@@ -12,7 +12,7 @@ const AdminContact = () => {
     const submitHandler = async (values) => {
         try {
             dispatch(setLoading())
-            const response = await axios.put("http://localhost:8080/api/portfolio/update-contact", { ...values, _id: portfolioData.contacts[0]._id, })
+            const response = await axios.put("https://portfolio-green-ten-61.vercel.app/api/portfolio/update-contact", { ...values, _id: portfolioData.contacts[0]._id, })
             dispatch(hideLoading())
             if (response.data.success) {
                 message.success(response.data.message)
