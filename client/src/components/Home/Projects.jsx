@@ -36,7 +36,6 @@ const Projects = () => {
                         <h2 className='text-secondary text-2xl'>{projects[selectedItemIndex].title}</h2>
 
                         <p className='text-white'>{projects[selectedItemIndex].description}</p>
-                        <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto mollitia tempora molestiae dolore temporibus ipsam voluptatibus at nulla placeat, eius libero facilis quod natus odit magnam, alias ab quo quidem?</p>
                     </div>
                 </div>
             </div>
